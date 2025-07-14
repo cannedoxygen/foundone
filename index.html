@@ -267,11 +267,24 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(2, 1fr);
             gap: 30px;
             margin-top: 50px;
             position: relative;
             z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @keyframes badgePulse {
+            0%, 100% { transform: scale(1) rotate(0deg); }
+            25% { transform: scale(1.05) rotate(1deg); }
+            50% { transform: scale(1.1) rotate(-1deg); }
+            75% { transform: scale(1.05) rotate(1deg); }
         }
 
         .feature-card {
@@ -488,6 +501,11 @@
             font-weight: bold;
             z-index: 1000;
             overflow: hidden;
+            margin-bottom: 20px;
+        }
+
+        body {
+            padding-bottom: 60px;
         }
 
         .ticker-content {
@@ -538,9 +556,11 @@
                     🧠 RETARD STRENGTH: MAXIMUM 🧠
                 </div>
                 <p class="hero-subtitle">THE MOST RETARDED MEME COIN ON SOLANA!</p>
-                <p class="hero-description">
-                    EVERY TIME A RETARD IS FOUND X SCREAMS "FOUND $ONE!" 📢 BE PART OF HISTORY! TAG YOUR FAVORITE RETARDS BUT USE FOUND ONE! 🧠🚀
-                </p>
+                <div style="background: linear-gradient(45deg, #FFD700, #ff0080, #FFD700); padding: 20px 30px; border-radius: 50px; display: inline-block; margin-bottom: 30px; border: 4px solid #fff; animation: badgePulse 2s ease-in-out infinite;">
+                    <p class="hero-description" style="margin: 0; color: #000; text-shadow: 2px 2px 0px #fff; font-size: 1.5rem;">
+                        EVERY TIME A RETARD IS FOUND X SCREAMS "FOUND $ONE!" 📢 BE PART OF HISTORY! TAG YOUR FAVORITE RETARDS BUT USE FOUND ONE! 🧠🚀
+                    </p>
+                </div>
                 <div class="retard-strength">
                     RETARD LEVEL: ∞
                 </div>
